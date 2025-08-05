@@ -1,0 +1,268 @@
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+
+    @font-face {
+        font-family: "Arial";
+        src: url("./fonts/ofont.ru_Arial.ttf");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button,
+    a {
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        line-height: 100%;
+        color: #000;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-family: "Arial";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #000;
+    }
+
+    /* Прелоадер на весь экран */
+    #preloader {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease;
+    }
+
+    /* Текст */
+    .loader-text {
+        font-size: 32px;
+        font-weight: bold;
+        color: var(--basic-green);
+        /* Или ваш цвет */
+        animation: scaleUp 1.5s ease-out forwards;
+    }
+
+    /* Анимация масштабирования */
+    @keyframes scaleUp {
+        0% {
+            opacity: 0;
+            transform: scale(0.7);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(1);
+        }
+    }
+
+    :root {
+        --basic-green: #68b738;
+        --basic-grey: #f2f2f2;
+        --special-grey-2: #ebebeb;
+        --special-grey: #cdcdcd;
+        --special-grey-2: #666;
+        --special-dark-grey: #444;
+        --special-dark-grey-2: #222;
+        --status-error: #ff8282;
+        --basic-green-2: #5eaa2f;
+    }
+
+    .container {
+        max-width: 1331px;
+        width: 100%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .logo-link .logo-img {
+        display: block;
+        transition: all 0.2s ease;
+    }
+
+    .logo-link:hover .logo-img {
+        content: url("./index-images-hover/logo-desktop\ 2.svg");
+    }
+
+    .logo-link:active .logo-img {
+        content: url("./index-images-active/logo-desktop\ 3.png");
+    }
+
+    /* site-nav */
+    .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .nav-list {
+        display: flex;
+        gap: 20px;
+        background-color: #5eaa2f;
+
+    }
+
+    .nav-link {
+        font-weight: 400;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        opacity: 0.6;
+    }
+
+    .nav-link:active {
+        text-decoration: underline;
+    }
+
+    /* site-nav */
+
+    /* header-wrapper */
+    .header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .header-wrapper__content__title {
+        font-size: 60px;
+        margin-top: 103px;
+    }
+
+    .header-wrapper__content__subtitle {
+        font-size: 20px;
+        margin-top: 50px;
+    }
+
+    .header-wrapper__content__btn {
+        padding: 14px 26px;
+        background: var(--basic-green);
+        border: none;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-top: 50px;
+        transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header-wrapper__content__btn:hover {
+        background: var(--basic-green-2);
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-wrapper__content__btn:active {
+        background: var(--basic-green-2);
+    }
+
+    .header-wrapper__content__btn:active .btn-text {
+        opacity: 0.3;
+        transition: opacity 0.2s ease;
+    }
+
+    .header-wrapper__image {
+        margin-top: 25px;
+    }
+
+
+
+    .header-wrapper__img {
+        margin-top: 103px;
+    }
+
+    .nav-dad {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* === Общие стили логотипов === */
+    .logo-link .logo-img {
+        display: block;
+    }
+
+    .logo-link .tablet-logo {
+        display: none;
+    }
+
+
+
+
+    /* === Адаптация для планшетов: 768px – 1024px === */
+    @media (min-width: 768px) and (max-width: 1024px) {
+
+        /* Показываем планшетный логотип, скрываем десктопный */
+        .logo-link .logo-img {
+            display: none;
+        }
+
+        .logo-link .tablet-logo {
+            display: block;
+        }
+
+        /* === Стили по умолчанию для .header-wrapper === */
+        .header-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 117px;
+            margin-top: 60px;
+        }
+
+        /* === Стили по умолчанию для .nav-link (если нужно на десктопе) === */
+        .nav-link {
+            position: relative;
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+            padding-bottom: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.6;
+        }
+
+        .nav-link:active {
+            border-bottom: 2px solid var(--basic-green);
+            font-size: 20px;
+            font-weight: 400;
+            color: #000;
+        }
+        .nav-list{
+            background: none;
+        }
+
+
+
+    }
